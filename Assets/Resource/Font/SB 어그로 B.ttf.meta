@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 64ab225ccb531f644becde818fa04f3e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - SB Aggro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e39162dce8bf9594ca6d07f8e6d16cbd, type: 3}
+  - {fileID: 12800000, guid: e12e2baf261cc3748aa3b49955c0d050, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
