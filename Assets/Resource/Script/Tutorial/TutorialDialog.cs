@@ -70,7 +70,7 @@ public class TutorialDialog : MonoBehaviour
         yield return StartCoroutine(NormalChat("", "분명 영화관에 있었는데?"));
         yield return StartCoroutine(NormalChat("", "내가 왜 여기있는거야?"));
         yield return StartCoroutine(NormalChat("", "여기서 나가야겠어..."));
-        yield return StartCoroutine(NormalChat("", "버튼을 눌러보자..."));
+        yield return StartCoroutine(NormalChat("", "레버를 눌러보자..."));
         yield return StartCoroutine(NormalChat("", " "));
     }
 }

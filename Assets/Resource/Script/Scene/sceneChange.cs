@@ -37,7 +37,7 @@ public class sceneChange : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Tutorial" && other.gameObject.name == "Player")
         {
             Debug.Log("´ê¾ÒÀ½");
-            SceneManager.LoadScene("Level");
+            SceneManager.LoadScene("Stage1");
         }
 
         else if (SceneManager.GetActiveScene().name == "Level" && other.gameObject.name == "Easy")
