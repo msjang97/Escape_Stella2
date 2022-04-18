@@ -25,7 +25,7 @@ public class ResPawnMusicNote : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     IEnumerator ResPawn_Coroutine()

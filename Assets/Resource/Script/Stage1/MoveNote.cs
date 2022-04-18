@@ -17,13 +17,13 @@ public class MoveNote : MonoBehaviour //음표 스크립트
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("EndPoint"))
-        {
-            Debug.Log("닿았어용");
-            Destroy(this.gameObject);
-        }
+        //if (collision.gameObject.CompareTag("EndPoint"))
+        //{
+        //    Debug.Log("닿았어용");
+        //    Destroy(this.gameObject);
+        //}
 
-        else if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("플레이어닿았어용");
             Destroy(this.gameObject);

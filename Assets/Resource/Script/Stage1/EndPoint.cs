@@ -20,9 +20,8 @@ public class EndPoint : MonoBehaviour //음표 도착지점 스크립트
     {
         if (collision.gameObject.CompareTag("MusicNote"))
         {
-            Debug.Log("닿았어용");
+            Debug.Log("도착지에 음표가 닿았어용");
             Destroy(collision.gameObject);
         }
-
     }
 }
