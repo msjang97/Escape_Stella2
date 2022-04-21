@@ -46,6 +46,12 @@ public class sceneChange : MonoBehaviour
             SceneManager.LoadScene("Stage2");
         }
 
+        else if (SceneManager.GetActiveScene().name == "LastStage" && other.gameObject.name == "Player")
+        {
+            Debug.Log("에필로그로 넘어가는 문에 닿았음");
+            SceneManager.LoadScene("Ending");
+        }
+
         else if (SceneManager.GetActiveScene().name == "Level" && other.gameObject.name == "Easy")
         {
             Debug.Log("닿았음");

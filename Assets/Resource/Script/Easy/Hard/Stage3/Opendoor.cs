@@ -11,6 +11,8 @@ public class Opendoor : MonoBehaviour
     public int Button5_num;
     public int Button6_num;
 
+    public GameObject Door2Obj;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +30,14 @@ public class Opendoor : MonoBehaviour
         Button5_num = GameObject.Find("Button5").GetComponent<Button5>().Button5_Count;
         Button6_num = GameObject.Find("Button6").GetComponent<Button6>().Button6_Count;
         Debug.Log("버튼1의 숫자" + Button1_num);
-        Destroy_Door();
+        DoorMove();
     }
 
-    private void Destroy_Door()
+    private void DoorMove()
     {
         if (Button1_num == 9 && Button2_num == 7 && Button3_num == 0 && Button4_num == 7 && Button5_num == 0 && Button6_num == 5)
         {
-            Destroy(gameObject);
+            Door2Obj.SetActive(true);
         }
     }
 }
