@@ -7,6 +7,7 @@ public class Piano : MonoBehaviour
     public GameObject BackGround2; //악보지
     public GameObject MusicNote; //음표 리스폰 오브젝트
     public GameObject NoteWall; //음표 나오는 곳 발판 
+    public GameObject ManagerObj; //게임매니저obj
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class Piano : MonoBehaviour
             BackGround2.SetActive(true);
             MusicNote.SetActive(true);
             NoteWall.SetActive(true);
+            ManagerObj.SetActive(true);
         }
     }
 }

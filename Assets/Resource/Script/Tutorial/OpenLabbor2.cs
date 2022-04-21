@@ -11,7 +11,6 @@ public class OpenLabbor2 : MonoBehaviour //다음 스테이지로 가기 위한 레버 및 발�
     void Start()
     {
         animator = GetComponent<Animator>();
-        //animator.SetBool("Bool_Set_On_Labbor2", false);
     }
 
     // Update is called once per frame
@@ -23,11 +22,9 @@ public class OpenLabbor2 : MonoBehaviour //다음 스테이지로 가기 위한 레버 및 발�
     public void OnTriggerStay2D(Collider2D obj)
     {
         if (obj.gameObject.name == "Player" && OntriggerEnter == true)
-        {
-           
+        {           
             animator.SetBool("Bool_Set_On_Labbor2", true);
             OpenDoor1 = true;
-            Debug.Log(OpenDoor1);
         }
     }
 

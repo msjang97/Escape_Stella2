@@ -40,6 +40,12 @@ public class sceneChange : MonoBehaviour
             SceneManager.LoadScene("Stage1");
         }
 
+        else if (SceneManager.GetActiveScene().name == "Stage1" && other.gameObject.name == "Player")
+        {
+            Debug.Log("stage1 넘어가는 문에 닿았음");
+            SceneManager.LoadScene("Stage2");
+        }
+
         else if (SceneManager.GetActiveScene().name == "Level" && other.gameObject.name == "Easy")
         {
             Debug.Log("닿았음");

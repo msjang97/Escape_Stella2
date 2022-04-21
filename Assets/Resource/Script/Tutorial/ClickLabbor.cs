@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ClickLabbor : MonoBehaviour
 {
+ 
     public Animator animator; //애니메이션 변수 적용
-    public GameObject OnSetBlock; //레버 클릭시 생기는 벽돌
+    public GameObject WallObj; //레버 클릭시 생기는 벽돌
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetBool("Bool_Labbor", false); 
-        OnSetBlock.SetActive(false); //벽돌안보임
+        animator.SetBool("Bool_Labbor", false);
+
     }
 
     // Update is called once per frame
@@ -22,10 +23,8 @@ public class ClickLabbor : MonoBehaviour
 
     private void OnMouseUp()
     {
-        print("눌렀습니다");
         animator.SetBool("Bool_Labbor", true);
-        OnSetBlock.SetActive(true); //벽돌 보임
-
+        WallObj.SetActive(true); //벽돌obj활성화
     }
 
 

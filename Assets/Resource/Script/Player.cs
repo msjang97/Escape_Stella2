@@ -66,22 +66,23 @@ public class Player : MonoBehaviour
     }
 
     void Jump()
-    {
+    {      
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (JumpCount < MaxJump)
             {
-                JumpCount++;
+                JumpCount++;         
                 rigid.velocity = Vector2.up * jumpPower;
             }
-        }       
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D collide)
     {
          if (collide.gameObject.tag == "Ground")
         {
-            JumpCount = 0;
+            JumpCount = 0;       
         }
       
         if (collide.gameObject.tag == "Slime")

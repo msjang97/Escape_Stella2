@@ -27,7 +27,6 @@ public class SetDoor : MonoBehaviour // 문 스크립트
 
         if (BoolDoorOpen1 == true && BoolDoorOpen2 == true)
         {
-            Debug.Log("왜안됨?");
             CloseDoor.SetActive(false);
             OpenDoor.SetActive(true);
         }
