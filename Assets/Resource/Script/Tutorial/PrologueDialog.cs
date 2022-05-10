@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PrologueDialog : MonoBehaviour
 {
-    public Text ChatText; // 실제 채팅이 나오는 텍스트
-    public Text CharacterName; // 캐릭터 이름이 나오는 텍스트
+    public Text ChatText; // 실제대사가 나오는 텍스트
 
     public List<KeyCode> skipButton; // 대화를 빠르게 넘길 수 있는 키
 
@@ -25,13 +24,11 @@ public class PrologueDialog : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Debug.Log("눌렸음");
             isButtonClicked = true;
             CheckNum++;
 
-            Debug.Log(CheckNum);
             if (CheckNum == 5)
             {
                 SceneManager.LoadScene("Tutorial"); // 튜토리얼 scene 이동.
@@ -41,10 +38,9 @@ public class PrologueDialog : MonoBehaviour
     }
 
 
-    IEnumerator NormalChat(string narrator, string narration)
+    IEnumerator NormalChat(string narration)
     {
         int a = 0;
-        CharacterName.text = narrator;
         writerText = "";
 
         //텍스트 타이핑 효과
@@ -69,11 +65,11 @@ public class PrologueDialog : MonoBehaviour
 
     IEnumerator TextPractice()
     {
-        yield return StartCoroutine(NormalChat("", "(한 영화관 안)"));
-        yield return StartCoroutine(NormalChat("", "상영회를 위해 오신 주연배우 스텔라님이 입장하고 계십니다!"));
-        yield return StartCoroutine(NormalChat("", "반갑습니다. 여주인공 스텔라입니다."));
-        yield return StartCoroutine(NormalChat("", "새 영화 기대해주세요!"));
-        yield return StartCoroutine(NormalChat("", "피곤하네... 잠들면 안 되는데..."));
+        yield return StartCoroutine(NormalChat("(한 영화관 안)"));
+        yield return StartCoroutine(NormalChat("상영회를 위해 오신 주연배우 스텔라님이 입장하고 계십니다!"));
+        yield return StartCoroutine(NormalChat("반갑습니다. 여주인공 스텔라입니다."));
+        yield return StartCoroutine(NormalChat("새 영화 기대해주세요!"));
+        yield return StartCoroutine(NormalChat("피곤하네... 잠들면 안 되는데..."));
     }
 
 

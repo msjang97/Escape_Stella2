@@ -12,14 +12,13 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rigid; //플레이어 캐릭터 Rigidbody속성을 받아올 변수
 
-    private Vector3 movement;
 
     private SpriteRenderer rend; // 그림반전을 위한 변수
     Animator animator; //애니메이션
 
     // Use this for initialization
     void Start()
-    {     
+    {
         rigid = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         rend = GetComponent<SpriteRenderer>();
@@ -28,8 +27,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Jump();
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("Bool_Jump", true);
+            Jump();           
+        }
     }
 
     void FixedUpdate()
@@ -62,29 +64,26 @@ public class Player : MonoBehaviour
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
 
-        
+
     }
 
     void Jump()
     {      
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             if (JumpCount < MaxJump)
             {
-                JumpCount++;         
+                JumpCount++;
                 rigid.velocity = Vector2.up * jumpPower;
             }
-        }
-
     }
 
     void OnCollisionEnter2D(Collision2D collide)
     {
-         if (collide.gameObject.tag == "Ground")
+        if (collide.gameObject.tag == "Ground")
         {
-            JumpCount = 0;       
+            JumpCount = 0;
+            animator.SetBool("Bool_Jump", false);
         }
-      
+
         if (collide.gameObject.tag == "Slime")
         {
             SceneManager.LoadScene("HardStage2");
