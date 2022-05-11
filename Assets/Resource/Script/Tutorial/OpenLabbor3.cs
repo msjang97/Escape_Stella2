@@ -26,7 +26,6 @@ public class OpenLabbor3 : MonoBehaviour
         {
             animator.SetBool("Bool_Set_On_labbor3", true);
             OpenDoor2 = true;
-            Debug.Log(OpenDoor2);
         }
     }
 

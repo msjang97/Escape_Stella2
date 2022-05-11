@@ -6,7 +6,7 @@ public class MonsterMove : MonoBehaviour
 {
     public GameObject LetterObj; //ÆíÁöÁö
 
-    private bool boolDrop = false;
+    //private bool boolDrop = false;
 
     public float Timer = 0.0f;
     // Start is called before the first frame update

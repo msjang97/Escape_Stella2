@@ -19,6 +19,7 @@ public class TutorialDialog : MonoBehaviour
     private GameObject Contents; //대사창 변수
 
     
+    
 
     void Start()
     {
@@ -35,13 +36,16 @@ public class TutorialDialog : MonoBehaviour
             CheckNum++;
         }
 
+        if (CheckNum == 5)
+        {
+            Contents.gameObject.SetActive(false); // 튜토리얼 scene 이동.
+        }
 
     }
 
-    IEnumerator NormalChat(string narrator, string narration) //원래는 캐릭터 이름도 쓰지만 쓰지않음.
+    IEnumerator NormalChat(string narration) //원래는 캐릭터 이름도 쓰지만 쓰지않음.
     {
         int a = 0;
-        CharacterName.text = narrator; 
         writerText = "";
 
         //텍스트 타이핑 한글자씩 출력함 효과
@@ -66,11 +70,11 @@ public class TutorialDialog : MonoBehaviour
 
     IEnumerator TextPractice() //대사입력 하는곳
     {   
-        yield return StartCoroutine(NormalChat("", "여긴 어디지?"));
-        yield return StartCoroutine(NormalChat("", "분명 영화관에 있었는데?"));
-        yield return StartCoroutine(NormalChat("", "내가 왜 여기있는거야?"));
-        yield return StartCoroutine(NormalChat("", "여기서 나가야겠어..."));
-        yield return StartCoroutine(NormalChat("", "레버를 눌러보자..."));
-        yield return StartCoroutine(NormalChat("", " "));
+        yield return StartCoroutine(NormalChat("여긴 어디지?"));
+        yield return StartCoroutine(NormalChat("분명 영화관에 있었는데?"));
+        yield return StartCoroutine(NormalChat("내가 왜 여기있는거야?"));
+        yield return StartCoroutine(NormalChat("여기서 나가야겠어..."));
+        yield return StartCoroutine(NormalChat("레버를 눌러보자..."));
+
     }
 }

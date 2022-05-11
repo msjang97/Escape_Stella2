@@ -26,5 +26,7 @@ public class EndPoint : MonoBehaviour //음표 도착지점 스크립트
             Destroy(collision.gameObject);
             EndPoint_DestoryNoteNum++;
         }
+
+
     }
 }

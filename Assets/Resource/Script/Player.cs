@@ -10,9 +10,8 @@ public class Player : MonoBehaviour
     public float MaxJump = 0; //최대 점프 횟수
     public int JumpCount = 0; //점프 몇번 했는지.
 
+
     private Rigidbody2D rigid; //플레이어 캐릭터 Rigidbody속성을 받아올 변수
-
-
     private SpriteRenderer rend; // 그림반전을 위한 변수
     Animator animator; //애니메이션
 
@@ -22,6 +21,7 @@ public class Player : MonoBehaviour
         rigid = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         rend = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("Bool_Jump", true);
-            Jump();           
+            Jump();
         }
     }
 
@@ -61,19 +61,16 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("walk", false);
         }
-
         transform.position += moveVelocity * movePower * Time.deltaTime;
-
-
     }
 
     void Jump()
-    {      
-            if (JumpCount < MaxJump)
-            {
-                JumpCount++;
-                rigid.velocity = Vector2.up * jumpPower;
-            }
+    {
+        if (JumpCount < MaxJump)
+        {
+            JumpCount++;
+            rigid.velocity = Vector2.up * jumpPower;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collide)
@@ -89,4 +86,5 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("HardStage2");
         }
     }
+
 }

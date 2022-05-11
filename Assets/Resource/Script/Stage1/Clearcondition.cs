@@ -26,13 +26,19 @@ public class Clearcondition : MonoBehaviour //게임매니저에서 클리어조건, 종료조�
         if (DestoryNote_InClearcondition == 3)
         {
             GameOvertxt.SetActive(true);
-            Time.timeScale = 0;
+
+            Invoke("TimetoScale", 2.0f);
             if (Input.GetKeyDown(KeyCode.F5))
             {
                 SceneManager.LoadScene("Stage1");
+                Time.timeScale = 1;
             }
         }
        
+    }
 
+    void TimetoScale()  //타임 스케일 조정
+    {
+        Time.timeScale = 0;
     }
 }
