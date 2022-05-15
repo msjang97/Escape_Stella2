@@ -24,7 +24,6 @@ public class MonsterMove : MonoBehaviour
     private void OnMouseDrag()
     {
         Timer += Time.deltaTime;
-        Debug.Log("타이머:" + Timer);
         Vector3 MousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5); //마우스 포지션값을 받아온다
         this.transform.position = Camera.main.ScreenToWorldPoint(MousePos); //카메라 화면 좌표값을 공간좌표로 변환.
         if (Timer > 3.0f)

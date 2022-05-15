@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class MonsterText : MonoBehaviour
 {
@@ -23,9 +23,8 @@ public class MonsterText : MonoBehaviour
     }
 
     void Update()
-    {
+    {    
         NowMusicPlaying = GameManagerObj.GetComponent<MusicCheck>().isplayingMusic;
-        Debug.Log(NowMusicPlaying);
     }
 
 
@@ -47,6 +46,7 @@ public class MonsterText : MonoBehaviour
         {
             if (NowMusicPlaying == true)
             {
+                Invoke("DestoryText", 2.0f);
                 //isButtonClicked = false;
                 break;
             }
@@ -58,5 +58,10 @@ public class MonsterText : MonoBehaviour
     {
         yield return StartCoroutine(NormalChat("졸려... 잠들면 큰일나는데...."));
         yield return StartCoroutine(NormalChat("조금만 자야지....."));
+    }
+
+    void DestoryText()
+    {
+        Destroy(ChatText);
     }
 }

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class TutorialDialog : MonoBehaviour
 {
     public Text ChatText; // 실제 채팅이 나오는 텍스트
-    public Text CharacterName; // 캐릭터 이름이 나오는 텍스트
 
     public List<KeyCode> skipButton; // 대화를 빠르게 넘길 수 있는 키
 
@@ -19,8 +18,6 @@ public class TutorialDialog : MonoBehaviour
     private GameObject Contents; //대사창 변수
 
     
-    
-
     void Start()
     {
         StartCoroutine(TextPractice()); //코루틴 함수(TextPracice) 시작

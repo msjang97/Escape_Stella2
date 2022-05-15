@@ -7,12 +7,12 @@ public class MonsterAlpha : MonoBehaviour
 
     public GameObject GameManagerObj;
     bool MusicPlayingCheck = false; //MusicCheck 스크립트에서 "isplayingMusic" 상태 받아올 변수
-    float Alphanum = 1.0f;
-
-    float a = 1;
+    public float Alphanum = 1.0f;
 
     public SpriteRenderer Spr;
-    Color MonsterColor;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +28,10 @@ public class MonsterAlpha : MonoBehaviour
         {
             while (true)
             {
-                Alphanum = Alphanum - 0.001f;
+                Alphanum = Alphanum - (Time.deltaTime / 2.0f);
                 Spr.color = new Color(1, 1, 0.5f, Alphanum);
-                if (Alphanum <= 0.0)
-                {
-                    Debug.Log("문제문제");
-                }
                 return;
             }
         }
-
-        //{
-        //    Alphanum = Alphanum - 0.01f;
-        //    Spr.color = new Color(1, 1, 1, Alphanum);
-
-        //}
-        //Debug.Log(Alphanum);
     }
 }
