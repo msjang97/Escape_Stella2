@@ -12,7 +12,7 @@ public class MonsterText : MonoBehaviour
 
     public string writerText = "";
 
-    bool isButtonClicked = false;
+    //bool isButtonClicked = false;
 
     public GameObject GameManagerObj; //음표닿으면 부셔지는 오브젝트
     bool NowMusicPlaying = false; //Endpoint 스크립트에서 부셔진 음표개수 받아올 변수

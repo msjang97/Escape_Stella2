@@ -33,7 +33,7 @@ public class Stage1Dialog : MonoBehaviour //stage1¿« ¥Î»≠
 
         if (CheckNum == 3)
         {
-            Invoke("SetOff", 2.0f);
+            Invoke("SetOff", 1.5f);
         }
     }
 
